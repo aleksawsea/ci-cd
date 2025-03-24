@@ -28,7 +28,7 @@ jobs:
         run: npm run build
 
       - name: Deploy to Netlify
-        uses: netlify/actions/deploy@v1
+        uses: netlify/actions/deploy@v2.0.0
         with:
           publish-dir: ./dist
           production-branch: main 
