@@ -1,0 +1,31 @@
+name: Validate Branch Name
+
+on:
+  push:
+    branches:
+      - '**'
+  pull_request:
+    branches:
+      - '**'
+
+jobs:
+  validate-branch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check branch name for push events
+        if: ${{ github.event_name == 'push' }}
+        run: |
+          echo "Current branch: $GITHUB_REF"
+          if [[ "$GITHUB_REF" != refs/heads/feature/* ]]; then
+            echo "Error: Branch name must start with 'feature/'";
+            exit 1;
+          fi
+
+      - name: Check source branch name for pull requests
+        if: ${{ github.event_name == 'pull_request' }}
+        run: |
+          echo "Source branch for PR: $GITHUB_HEAD_REF"
+          if [[ "$GITHUB_HEAD_REF" != feature/* ]]; then
+            echo "Error: All work must be done in branches starting with 'feature/'";
+            exit 1;
+          fi
