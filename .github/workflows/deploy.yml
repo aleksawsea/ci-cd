@@ -34,5 +34,6 @@ jobs:
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
           NETLIFY_DEPLOY_MESSAGE: "Deployed from GitHub action"
           NETLIFY_DEPLOY_TO_PROD: true
+          build_directory: ./dist
           install_command: "npm install -g netlify-cli"
           build_command: "npm run build"
