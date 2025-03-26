@@ -4,6 +4,18 @@
 .range {
   width: 100%;
 
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
   &__value {
     width: 100%;
     height: 40px;
@@ -34,7 +46,6 @@
       height: 6px;
       top: -6px;
       background: none;
-      pointer-events: none;
       appearance: none;
       -webkit-appearance: none;
     }

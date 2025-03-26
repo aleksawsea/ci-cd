@@ -43,6 +43,7 @@
 .filter {
   flex: 0 0 240px;
   min-height: 500px;
+  background-color: #fff;
   & > div {
     margin-bottom: 50px;
   }
@@ -89,6 +90,7 @@
 
     &_active {
       transform: translateY(0%);
+      background-color: #fff;
     }
   }
 }
